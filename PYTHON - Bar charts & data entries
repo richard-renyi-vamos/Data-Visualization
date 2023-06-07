@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+
+def create_bar_chart(data_entries):
+    # Extract labels and values from data_entries
+    labels = [entry[0] for entry in data_entries]
+    values = [entry[1] for entry in data_entries]
+
+    # Create bar chart
+    plt.bar(labels, values)
+    plt.xlabel('Data Entries')
+    plt.ylabel('Values')
+    plt.title('Bar Chart')
+    plt.show()
+
+def get_data_entries(num_entries):
+    data_entries = []
+    for i in range(num_entries):
+        label = input("Enter a label for entry {}: ".format(i + 1))
+        value = float(input("Enter a value for entry {}: ".format(i + 1)))
+        data_entries.append((label, value))
+    return data_entries
+
+if __name__ == '__main__':
+    num_entries = 5
+    data_entries = get_data_entries(num_entries)
+    create_bar_chart(data_entries)
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
